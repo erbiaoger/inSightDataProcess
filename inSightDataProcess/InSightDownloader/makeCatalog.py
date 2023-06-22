@@ -4,13 +4,15 @@ import requests
 import xml.etree.ElementTree as ET
 import os
 
-def makeCatalog(path_xml, path_Catalog):
+def makeCatalog(path_Catalog):
     ns = {"q":"http://quakeml.org/xmlns/quakeml/1.2",
         "d":"http://quakeml.org/xmlns/bed/1.2",
             "catalog":"http://anss.org/xmlns/catalog/0.1",
             "tensor":"http://anss.org/xmlns/tensor/0.1",
             "mars":"http://quakeml.org/xmlns/bed/1.2/mars"}
-
+    
+    module_path = os.path.abspath(__file__)
+    path_xml = os.path.join(os.path.dirname(module_path), 'events_mars_extended_multiorigin_v12_2022-07-01.xml')
     tree = ET.parse(path_xml)
     root = tree.getroot()
     eventlist = root.findall('d:eventParameters',ns)

@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# Massive downloader of InSight data from IRIS
-# Contributors: Foivos Karakostas, Doyeon Kim, Ross Maguire, Aisha Khatib and the UMD InSight group
 
 import os
 import requests
